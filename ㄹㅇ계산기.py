@@ -13,11 +13,21 @@ def click_calcul():
     label3 = tkinter.Label (chang, text=str2, font=('맑은 고딕', 10))
     label3.place (x=25, y=152)
 
+def mouseMove(event):
+    x = event.x
+    y = event.y
+    labelMouse.config (text=str(x)+','+ str(y))
+    labelMouse.place(x=0,y=280)
+
 
 
 chang = tkinter.Tk ()
 chang.title ('나누는 계산기에요')
 chang.geometry ('400x300')
+
+chang.bind ('<Motion>', mouseMove)
+labelMouse = tkinter.Label(chang, text=',', font=('맑은 고딕', 10))
+
 
 label1 = tkinter.Label (chang, text= '나눠지는 수', font= ('맑은 고딕',10))
 label1.place (x=25, y=25)
