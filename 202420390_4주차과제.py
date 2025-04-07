@@ -3,6 +3,7 @@ import random
 
 # 제비 결과 리스트 설정
 luck = ['대길','중길', '길' ,'흉','대흉']
+color = ['#f9f871','#ffc75f', '#ff9671' ,'#d65db1','#845ec2']
 
 #좌표 함수
 def mouseMove(event):
@@ -12,7 +13,9 @@ def mouseMove(event):
 
 #제비뽑기 함수
 def Roll ():
-    Result ['text'] = (random.choice (luck))
+    Final = random.randrange (1,5)
+    Result ['text'] = (luck[Final])
+    Result ['fg'] = (color[Final])
     
 #창 생성
 root = tkinter.Tk ()
